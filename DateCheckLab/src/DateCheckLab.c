@@ -152,17 +152,25 @@ Date convert_input(char date[]){
 	y.day=atoi(daystr);
 	return y;
 }
-
 void complete_output(_Bool verifydate,_Bool leapyear, Date y){
+	//Check that if the input date was accepted
 	if(verifydate == true){
+		//check if date is leap year and print it if so.
 		if(leapyear == true){
 			printf("\n The date saved is a leap year, the date saved is: %4d-%02d-%02d", y.year, y.month, y.day);
 		}
+		//if its not a leap year, this will be the output
 		else {
 			printf("\n The date saved is not a leap year, the date saved is: %4d-%02d-%02d", y.year, y.month, y.day);
 		}
 	}
+	//if the date was not accepted we will print this
 	else {
 		printf("\n something went wrong, try again.");
 	}
+}
+void dayspassed(Date y){
+	//This function will use the saved day and month(s) to calculate the days passed in the year that was entered.
+
+
 }

@@ -16,7 +16,8 @@ int main(){
 	char date[TOTAL+ 1];
 	int string_length;
 	_Bool V;
-	do{
+	_Bool L;
+	//do{
 		setbuf(stdout, NULL);
 		//get user input
 		printf("\n Enter a date between 1950 and 2019 in format YYYY-MM-DD  ");
@@ -33,9 +34,9 @@ int main(){
 			//call on functions
 		Date x = convert_input(date);
 			 V = verifydate(x);
-			_Bool L = leapyear(x);
+			 L = leapyear(x);
 			complete_output(V,L, x);
-}while(V == false);
+//}while(V == false); (the buffer doesnt get flushed between each loop so this is disabled until a solution is found)
 
 	return 0;
 }
