@@ -16,26 +16,26 @@ SimpleTest_Initialize()					// Counters for all tests are reset here
 SimpleTest_CreateTest(test_verifydate)  	// Single test creation
 {
 	// define your test by calling functions from test target
-
-
+	Date temp = {2019,10,19};
+	_Bool ok = verifydate(temp);
     /// assert that the outcome of your call matches expected outcome
-    SimpleTest_AssertInteger(<<input>>), <<input>>, "the outcome is not correct");
+    SimpleTest_AssertTrue(ok, "the outcome is not correct");
 
     //SimpleTest_AssertString(<< CALCULATED VALUE >>, << EXPECTED VALUE >>, "<< ERROR MSG >>");
 }
 SimpleTest_FinalizeTest()
 
-SimpleTest_CreateTest(test_leapyear)  	// Single test creation
-{
-	// define your test by calling functions from test target
-
-
-    /// assert that the outcome of your call matches expected outcome
-    SimpleTest_AssertInteger(<<input>>), <<input>>, "the outcome is not correct");
-
-    //SimpleTest_AssertString(<< CALCULATED VALUE >>, << EXPECTED VALUE >>, "<< ERROR MSG >>");
-}
-SimpleTest_FinalizeTest()				// End of test
+//SimpleTest_CreateTest(test_leapyear)  	// Single test creation
+//{
+//	// define your test by calling functions from test target
+//
+//
+//    /// assert that the outcome of your call matches expected outcome
+//    SimpleTest_AssertInteger(<<input>>), <<input>>, "the outcome is not correct");
+//
+//    //SimpleTest_AssertString(<< CALCULATED VALUE >>, << EXPECTED VALUE >>, "<< ERROR MSG >>");
+//}
+//SimpleTest_FinalizeTest()				// End of test
 
 
 /// Repeat the pattern above for all your tests for test target
@@ -50,7 +50,7 @@ static char* test_batch()
 
     /// supply name of each test as parameter
     SimpleTest_RunTest(test_verifydate);	// One test runs
-    SimpleTest_RunTest(test_leapyear);	// One test runs
+    //SimpleTest_RunTest(test_leapyear);	// One test runs
 
     return NULL;
 }

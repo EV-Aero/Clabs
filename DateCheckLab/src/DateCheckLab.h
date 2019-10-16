@@ -55,5 +55,5 @@ void userinput(char date[]);
 #endif /* SRC_DATECHECKLAB_H_ */
 
 //days passed function, takes the days passed each month, taken from defines in H file, then adds the converted days
-//and ends up with the days passed in the year.
+//and returns with the days passed in the year.
 int dayspassedc(Date y);
