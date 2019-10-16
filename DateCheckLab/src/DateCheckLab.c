@@ -152,16 +152,23 @@ Date convert_input(char date[]){
 	y.day=atoi(daystr);
 	return y;
 }
-void complete_output(_Bool verifydate,_Bool leapyear, Date y){
+void complete_output(_Bool verifydate,_Bool leapyear, Date y,int dayspassed){
 	//Check that if the input date was accepted
 	if(verifydate == true){
 		//check if date is leap year and print it if so.
 		if(leapyear == true){
 			printf("\n The date saved is a leap year, the date saved is: %4d-%02d-%02d", y.year, y.month, y.day);
+			if(y.month > 2){
+			printf("\n The days passed in the year is: %d",++dayspassed);
+			}
+			else{
+			printf("\n The days passed in the year is: %d", dayspassed);
+			}
 		}
 		//if its not a leap year, this will be the output
 		else {
 			printf("\n The date saved is not a leap year, the date saved is: %4d-%02d-%02d", y.year, y.month, y.day);
+			printf("\n The days passed in the year is: %d",dayspassed);
 		}
 	}
 	//if the date was not accepted we will print this
@@ -169,8 +176,59 @@ void complete_output(_Bool verifydate,_Bool leapyear, Date y){
 		printf("\n something went wrong, try again.");
 	}
 }
-void dayspassed(Date y){
-	//This function will use the saved day and month(s) to calculate the days passed in the year that was entered.
+//This function will use the saved day and month(s) max day to calculate the days passed.
+int dayspassedc(Date y){
 
-
+	int dayspassed;
+	switch(y.month){
+	case january:{
+		dayspassed =  y.day;
+		break;
+	}
+	case february:{
+		dayspassed = passedfeb + y.day;
+		break;
+	}
+	case march:{
+		dayspassed = passedmar + y.day;
+		break;
+	}
+	case april:{
+		dayspassed = passedapr + y.day;
+		break;
+	}
+	case may:{
+		dayspassed = passedmay + y.day;
+		break;
+	}
+	case june:{
+		dayspassed = passedjun + y.day;
+		break;
+	}
+	case july:{
+		dayspassed = passedjul + y.day;
+		break;
+	}
+	case august:{
+		dayspassed = passedaug + y.day;
+		break;
+	}
+	case september:{
+		dayspassed = passedsep + y.day;
+		break;
+	}
+	case october:{
+		dayspassed = passedoct + y.day;
+		break;
+	}
+	case november:{
+		dayspassed = passednov + y.day;
+		break;
+	}
+	case december:{
+		dayspassed = passeddec + y.day;
+		break;
+	}
+	}
+	return dayspassed;
 }

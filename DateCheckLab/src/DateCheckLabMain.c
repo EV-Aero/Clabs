@@ -17,10 +17,11 @@ int main(){
 	int string_length;
 	_Bool V;
 	_Bool L;
+	int M;
 	//do{
 		setbuf(stdout, NULL);
 		//get user input
-		printf("\n Enter a date between 1950 and 2019 in format YYYY-MM-DD  ");
+		printf("\n Enter a date between 1900 and 2019 in format YYYY-MM-DD  ");
 		userinput(date);
 
 		string_length = strlen(date);
@@ -33,10 +34,11 @@ int main(){
 		}
 			//call on functions
 		Date x = convert_input(date);
-			 V = verifydate(x);
-			 L = leapyear(x);
-			complete_output(V,L, x);
-//}while(V == false); (the buffer doesnt get flushed between each loop so this is disabled until a solution is found)
+		V = verifydate(x);
+		L = leapyear(x);
+		M = dayspassedc(x);
+		complete_output(V, L, x, M);
+//}while(V == false); (the buffer doesnt get flushed between each loop so this is disabled until a good solution is found)
 
 	return 0;
 }
