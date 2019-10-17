@@ -5,7 +5,7 @@
  */
 #include <stdio.h>
 
-#include "../../../git/CLabs/DateCheckLab/test/SimpleCTester.h"
+#include "SimpleCTester.h"
 #include "../src/DateCheckLab.h"
 
 SimpleTest_Initialize()					// Counters for all tests are reset here

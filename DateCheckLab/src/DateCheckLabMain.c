@@ -18,10 +18,11 @@ int main(){
 	_Bool V;
 	_Bool L;
 	int M;
-	//do{
+	do{
+		fseek(stdin,0,SEEK_END); // NEED TO FIND A BETTER WAY TO "FLUSH" THE INPUT FOR EACH LOOP
 		setbuf(stdout, NULL);
 		//get user input
-		printf("\n Enter a date between 1900 and 2019 in format YYYY-MM-DD  ");
+		printf("\n\n Enter a date between 1900 and 2019 in format YYYY-MM-DD  ");
 		userinput(date);
 
 		string_length = strlen(date);
@@ -38,7 +39,7 @@ int main(){
 		L = leapyear(x);
 		M = dayspassedc(x);
 		complete_output(V, L, x, M);
-//}while(V == false); (the buffer doesnt get flushed between each loop so this is disabled until a good solution is found)
+}while(V == false);
 
 	return 0;
 }
