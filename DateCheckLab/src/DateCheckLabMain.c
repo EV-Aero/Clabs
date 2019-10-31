@@ -1,6 +1,5 @@
 /*
  * DateCheckLabMain.c
- *
  *  Created on: 9 okt. 2019
  *      Author: adrianm
  */
